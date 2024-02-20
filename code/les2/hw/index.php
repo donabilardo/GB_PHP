@@ -8,6 +8,9 @@
     <title>Урок 2. Условия, Массивы, циклы, функции</title>
 </head>
 <body>
+<?php
+phpinfo();
 
+?>
 </body>
 </html>
