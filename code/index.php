@@ -19,8 +19,8 @@
 <div class="container">
     <h1>Основы PHP</h1>
     <ul>
-        <li><a href="les1/hw/index.php">Задание 1</a></li>
-        <li><a href="les2/hw/index.php">Задание 2</a></li>
+        <li><a href="les1/hw/index.php">Урок 2. Основы</a></li>
+        <li><a href="les2/hw/index.php">Урок 2. Условия, Массивы, циклы, функции</a></li>
     </ul>
 </div>
 
