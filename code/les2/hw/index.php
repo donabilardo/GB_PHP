@@ -12,6 +12,14 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
+        pre {
+            background-color: aliceblue;
+        }
+
+        input {
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
@@ -39,20 +47,41 @@
     </p>
     <h4>Решенеие:</h4>
     <?php
-    function mathOperation(float $arg1, float $arg2, string $operation): float
+    function plus($arg1, $arg2): float|int
+    {
+        return $arg1 + $arg2;
+    }
+
+    function minus($arg1, $arg2): float|int
+    {
+        return $arg1 - $arg2;
+    }
+
+    function multi($arg1, $arg2): float|int
+    {
+        return $arg1 * $arg2;
+    }
+
+    function division($arg1, $arg2): float|int
+    {
+        return $arg1 / $arg2;
+    }
+
+
+      function mathOperation(float $arg1, float $arg2, $operation):  float|int
     {
         switch ($operation) {
             case '+':
-                $result = $arg1 + $arg2;
+               $result = plus($arg1, $arg2);
                 break;
             case  '-':
-                $result = $arg1 - $arg2;
+               $result = minus($arg1, $arg2);
                 break;
             case '*':
-                $result = $arg1 * $arg2;
+               $result = multi($arg1, $arg2);
                 break;
             case '/':
-                $result = $arg1 / $arg2;
+               $result = division($arg1, $arg2);
                 break;
             default:
                 $result = 0;
@@ -61,22 +90,44 @@
     }
 
     ?>
-    <p>
+<details>
+    <summary>Код</summary>
     <pre>
-    function mathOperation(float $arg1, float $arg2, string $operation): float
+function plus($arg1, $arg2): float|int
+    {
+        return $arg1 + $arg2;
+    }
+
+    function minus($arg1, $arg2): float|int
+    {
+        return $arg1 - $arg2;
+    }
+
+    function multi($arg1, $arg2): float|int
+    {
+        return $arg1 * $arg2;
+    }
+
+    function division($arg1, $arg2): float|int
+    {
+        return $arg1 / $arg2;
+    }
+
+
+      function mathOperation(float $arg1, float $arg2, $operation):  float|int
     {
         switch ($operation) {
             case '+':
-                $result = $arg1 + $arg2;
+               $result = plus($arg1, $arg2);
                 break;
             case  '-':
-                $result = $arg1 - $arg2;
+               $result = minus($arg1, $arg2);
                 break;
             case '*':
-                $result = $arg1 * $arg2;
+               $result = multi($arg1, $arg2);
                 break;
             case '/':
-                $result = $arg1 / $arg2;
+               $result = division($arg1, $arg2);
                 break;
             default:
                 $result = 0;
@@ -84,11 +135,10 @@
         return $result;
     }
     </pre>
-
-    </p>
+</details>
 
     <p>
-        Результат: <?php echo mathOperation(22, 26, '+'); ?>
+        Результат: <?php echo mathOperation(272, 226, '/'); ?>
     </p>
 
     <h3>Задание 3</h3>
@@ -116,20 +166,28 @@
     ];
     ?>
 
-    <pre>
+    <details>
+        <summary>Массив с городами</summary>
+        <pre>
         <?php var_dump($regions); ?>
-        <?php
-        echo "<hr>";
-        foreach ($regions as $region => $sities) {
-            echo "<strong>" . $region . "</strong><br>";
-            for ($i = 0; $i < count($sities); $i++) {
-                echo $sities[$i];
-                echo '<br>';
-            }
-            echo "<br>";
-        }
-        ?>
     </pre>
+    </details>
+
+    <pre>
+                <?php
+                echo "<hr>";
+                foreach ($regions as $region => $sities) {
+                    echo "<strong>" . $region . "</strong><br>";
+                    for ($i = 0; $i < count($sities); $i++) {
+                        echo $sities[$i];
+                        echo '<br>';
+                    }
+                    echo "<br>";
+                }
+                echo "<hr>";
+                ?>
+    </pre>
+
     <h3>Задание 4</h3>
     <p>
         Объявить массив, индексами которого являются буквы русского языка, а значениями – соответствующие латинские
@@ -209,10 +267,54 @@
         " " => "_"
     ];
 
-    echo "<pre>";
-    var_dump($dict);
-    echo "</pre>";
     ?>
+    <details>
+        <summary>Словарь</summary>
+        <?php
+        echo "<pre>";
+        var_dump($dict);
+        echo "</pre>";
+        ?>
+    </details>
+
+    <?php
+    /*
+if (isset($_POST["translate"])) {
+    $translate = rtrim($_POST["translate"]);
+    $arr = str_split($translate, 1);
+    $arr_result = [];
+
+    foreach ($arr as $key => $value) {
+        $mySymbol = $value;
+        foreach ($dict as $key => $value) {
+            if ($mySymbol == $key) {
+                echo "$key" . PHP_EOL;
+            }
+        }
+    }
+}
+*/
+    $translate = '';
+    $result = '';
+    if (isset($_POST["translate"])) {
+        $translate = rtrim($_POST["translate"]);
+        $result = strtr($translate, $dict);
+    }
+
+    function transliterate($txt)
+    {
+        global $dict;
+        return strtr($txt, $dict);
+    }
+
+    ?>
+    <form action="index.php" method="post">
+        <input type="text" placeholder="Введите строку..." name="translate">
+        <button type="submit">Преобразовать</button>
+        <br>
+        <div class="result"><?php echo transliterate($translate) ?></div>
+
+    </form>
 
 </div>
 
