@@ -5,25 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Основы PHP</title>
+    <title>Урок 3. Файлы, подключение кода, Composer</title>
     <style>
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0px 20px;
+            padding: 0 20px;
+        }
+
+        pre {
+            background-color: aliceblue;
+        }
+
+        input {
+            margin: 20px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Основы PHP</h1>
-    <ul>
-        <li><a href="les1/hw/index.php">Урок 2. Основы</a></li>
-        <li><a href="les2/hw/index.php">Урок 2. Условия, Массивы, циклы, функции</a></li>
-        <li><a href="les3/hw/index.php">Урок 3. Файлы, подключение кода, Composer</a></li>
-    </ul>
-</div>
 
+</div>
 </body>
 </html>
