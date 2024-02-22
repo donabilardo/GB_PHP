@@ -68,20 +68,20 @@
     }
 
 
-      function mathOperation(float $arg1, float $arg2, $operation):  float|int
+    function mathOperation(float $arg1, float $arg2, $operation): float|int
     {
         switch ($operation) {
             case '+':
-               $result = plus($arg1, $arg2);
+                $result = plus($arg1, $arg2);
                 break;
             case  '-':
-               $result = minus($arg1, $arg2);
+                $result = minus($arg1, $arg2);
                 break;
             case '*':
-               $result = multi($arg1, $arg2);
+                $result = multi($arg1, $arg2);
                 break;
             case '/':
-               $result = division($arg1, $arg2);
+                $result = division($arg1, $arg2);
                 break;
             default:
                 $result = 0;
@@ -90,9 +90,9 @@
     }
 
     ?>
-<details>
-    <summary>Код</summary>
-    <pre>
+    <details>
+        <summary>Код</summary>
+        <pre>
 function plus($arg1, $arg2): float|int
     {
         return $arg1 + $arg2;
@@ -135,12 +135,12 @@ function plus($arg1, $arg2): float|int
         return $result;
     }
     </pre>
-</details>
+    </details>
 
     <p>
         Результат: <?php echo mathOperation(272, 226, '/'); ?>
     </p>
-
+    <hr>
     <h3>Задание 3</h3>
     <p>
         Объявить массив, в котором в качестве ключей будут использоваться названия областей, а в качестве значений –
@@ -172,7 +172,7 @@ function plus($arg1, $arg2): float|int
         <?php var_dump($regions); ?>
     </pre>
     </details>
-
+    <h4>Решенеие:</h4>
     <pre>
                 <?php
                 echo "<hr>";
@@ -187,7 +187,7 @@ function plus($arg1, $arg2): float|int
                 echo "<hr>";
                 ?>
     </pre>
-
+    <hr>
     <h3>Задание 4</h3>
     <p>
         Объявить массив, индексами которого являются буквы русского языка, а значениями – соответствующие латинские
@@ -312,9 +312,130 @@ if (isset($_POST["translate"])) {
         <input type="text" placeholder="Введите строку..." name="translate">
         <button type="submit">Преобразовать</button>
         <br>
+        <h4>Решенеие:</h4>
         <div class="result"><?php echo transliterate($translate) ?></div>
 
     </form>
+    <hr>
+    <h3>Задание 5</h3>
+    <p>
+        С помощью рекурсии организовать функцию возведения числа в степень.
+        Формат: function power($val, $pow), где $val – заданное число, $pow – степень.
+    </p>
+    <h4>Решение:</h4>
+    <details>
+        <summary>Исходники:</summary>
+        <pre>
+    function recusionPow(int $num, int $exp){
+        if ($exp < 1 || $exp === 1){
+            return pow($num, 1);
+        }
+        return pow($num,$exp)
+    }
+        </pre>
+    </details>
+    <?php
+    function recusionPow(int $num, int $exp): float|int
+    {
+        if ($exp <= 1) {
+            return pow($num, 1);
+        }
+        return pow($num, $exp);
+    }
+
+    ?>
+
+    <strong>Результат возведение 4 в степень 4:</strong> <?php echo recusionPow(4, 4) ?>
+    <hr>
+    <h3>Задание 6</h3>
+    <p>
+        Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями,
+        например: 22 часа 15 минут 21 час 43 минуты.
+    </p>
+    <h4>Решение:</h4>
+    <?php
+
+    function getDateNow()
+    {
+        $date_now = time() + 15151515585;
+        date_default_timezone_set('Asia/Yekaterinburg');
+        $h = date("H", $date_now);
+        $m = date("i", $date_now);
+        $s = date("s", $date_now);
+
+        if ($h == 1) {
+            $h = $h . " час ";
+        } elseif ($h > 1 && $h < 5) {
+            $h = $h . " часа ";
+        } else {
+            $h = $h . " часов ";
+        }
+
+
+        if ($m == 1 || $m == 01) {
+            $m = $m . " минута ";
+        } elseif ($m > 1 && $m <= 4) {
+            $m = $m . " минуты ";
+        } else {
+            $m = $m . " минут ";
+        }
+
+
+        if ($s == 1 || $s == 01) {
+            $s = $s . " секунда";
+        } elseif ($s > 1 && $s <= 4) {
+            $s = $s . " секунды";
+        } else {
+            $s = $s . " секунд";
+        }
+
+        return $h . $m . $s;
+    }
+
+    ?>
+    <details>
+        <summary>Исходники:</summary>
+        <pre>
+    function getDateNow()
+    {
+        $date_now = time() + 15151515585;
+        date_default_timezone_set('Asia/Yekaterinburg');
+        $h = date("H", $date_now);
+        $m = date("i", $date_now);
+        $s = date("s", $date_now);
+
+        if ($h == 1) {
+            $h = $h . " час ";
+        } elseif ($h > 1 && $h < 5) {
+            $h = $h . " часа ";
+        } else {
+            $h = $h . " часов ";
+        }
+
+
+        if ($m == 1 || $m == 01) {
+            $m = $m . " минута ";
+        } elseif ($m > 1 && $m <= 4) {
+            $m = $m . " минуты ";
+        } else {
+            $m = $m . " минут ";
+        }
+
+
+        if ($s == 1 || $s == 01) {
+            $s = $s . " секунда";
+        } elseif ($s > 1 && $s <= 4) {
+            $s = $s . " секунды";
+        } else {
+            $s = $s . " секунд";
+        }
+
+        return $h . $m . $s;
+    }
+        </pre>
+    </details>
+
+    <strong>Результат: <?php echo getDateNow(); ?></strong>
 
 </div>
 
