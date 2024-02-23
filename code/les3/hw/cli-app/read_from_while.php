@@ -14,6 +14,7 @@ if (!file_exists($file_path) && !is_readable($file_path)) {
     foreach ($contents as $name){
         echo $name;
     }
+
 }
 
 
