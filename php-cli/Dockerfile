@@ -12,5 +12,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 
-VOLUME ${pwd}../code/les3/hw
-WORKDIR ${pwd}../code/les3/hw
+VOLUME /code
+WORKDIR /code
+
+
