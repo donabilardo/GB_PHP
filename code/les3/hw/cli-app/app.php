@@ -4,8 +4,8 @@ require_once ('src/main.function.php');
 require_once ('src/template.function.php');
 require_once ('src/file.function.php');
 
-$result = main('users.txt');
+$result = main('config.ini');
 
+echo $result;
 
-
-echo parseComand();
+//echo parseComand();

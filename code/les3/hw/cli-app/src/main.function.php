@@ -1,8 +1,25 @@
 <?php
 
-function main(string $configPath): string
+function main(string $configPath)
 {
-    return $configPath;
+    $config = readConfig($configPath);
+
+    if (!$config) {
+        return handleError("Невозможно подключить файл настроек");
+    }
+
+    $storageFileAddress = $config['storage']['address'];
+
+    $functionName = parseComand();
+
+    if (function_exists($functionName)) {
+        return $functionName($storageFileAddress);
+
+    } else {
+        handleError("вызываемая функция не существует");
+    }
+
+
 }
 
 function parseComand(): string
@@ -12,7 +29,7 @@ function parseComand(): string
     if (isset($_SERVER['argv'][1])) {
         $functionName = match ($_SERVER['argv'][1]) {
             "read" => "readUser",
-            "add" => "adduser",
+            "add" => "addUser",
             "clear" => "clearUser",
             default => "help"
         };
