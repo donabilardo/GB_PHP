@@ -1,4 +1,18 @@
 {
-  "name": "PHP base GeekBrains",
-  "version": "1.0.0"
+  "name": "root/code",
+  "autoload": {
+    "files": [
+      "src/main.function.php",
+      "src/template.function.php",
+      "src/file.function.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "donabilardo"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  }
 }
