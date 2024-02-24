@@ -37,7 +37,7 @@
         ввести некорректную информацию (например, дату в виде 12-50-1548)? Какие еще некорректные данные могут быть
         введены? Исправьте это, добавив соответствующие обработки ошибок.
         Для запуска контейнера:
-    <pre>docker run --rm -v ${pwd}/code/les3/hw:/hw php-cli  php /hw/cli-app/index.php</pre>
+    <pre>docker run --rm -v ${pwd}/code/les3/hw:/hw php-cli  php /hw/cli-app/app.php (параметры)</pre>
     Версия composer:
     <pre>docker run --rm php-cli composer -v  </pre>
     </p>
