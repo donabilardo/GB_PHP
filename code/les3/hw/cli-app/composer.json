@@ -4,7 +4,8 @@
     "files": [
       "src/main.function.php",
       "src/template.function.php",
-      "src/file.function.php"
+      "src/file.function.php",
+      "src/validate.function.php"
     ]
   },
   "authors": [

@@ -6,7 +6,7 @@ function readUser(string $address)
         $file = fopen($address, "rb");
         $contents = '';
         while (!feof($file)) {
-            $contents .= fgets($file, );
+            $contents .= fgets($file,);
         }
         fclose($file);
         return $contents;
@@ -19,8 +19,29 @@ function readUser(string $address)
 
 function addUser(string $address): string
 {
-    $nameUser = readline("Имя пользователя: ");
-    $birthdayUser = readline("Дата рождения в формате ДД-ММ-ГГГГ (23-02-2024): ");
+
+    $nameUser = '';
+    $checkName = false;
+    while (!$checkName) {
+        $nameUser = readline("Введите имя пользователя в формате Иванов Иван Иванович: \r\n");
+        if (preg_match("/^\d+$/", $nameUser)) {
+            echo handleError("Имя пользователя введено некорректно");
+        } else {
+            $checkName = true;
+        }
+    }
+
+    $birthdayUser = '';
+    $checkData = false;
+    while (!$checkData) {
+        $birthdayUser = readline("Дата рождения в формате ДД-ММ-ГГГГ (23-02-2024): ");
+        if (preg_match("/^(0[1-9]|[12][0-9]|3[01])[\.](0[1-9]|1[012])[\.](19|20)\d\d$/", $birthdayUser)) {
+            $birthdayUser = true;
+        } else {
+            echo handleError("Дата рождения, введена некорректно");
+        }
+    }
+
     $dataUser = $nameUser . ", " . "$birthdayUser \r\n";
 
     $file_open = fopen($address, "a"); //открываем файл для записи

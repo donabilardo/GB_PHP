@@ -24,7 +24,7 @@ function main(string $configPath)
 
 function parseComand(): string
 {
-    $functionName = 'helpFunction';
+    $functionName = 'help';
 
     if (isset($_SERVER['argv'][1])) {
         $functionName = match ($_SERVER['argv'][1]) {
