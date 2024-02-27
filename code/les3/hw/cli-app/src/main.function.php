@@ -31,6 +31,7 @@ function parseComand(): string
             "read" => "readUser",
             "add" => "addUser",
             "clear" => "clearUser",
+            "del" => "del",
             default => "help"
         };
     }

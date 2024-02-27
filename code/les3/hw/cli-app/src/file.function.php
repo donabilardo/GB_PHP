@@ -24,10 +24,12 @@ function addUser(string $address): string
     $checkName = false;
     while (!$checkName) {
         $nameUser = readline("Введите имя пользователя в формате Иванов Иван Иванович: \r\n");
-        if (preg_match("/^\d+$/", $nameUser)) {
-            echo handleError("Имя пользователя введено некорректно");
-        } else {
+        if (validateName($nameUser)) {
+            $checkName = false;
+            handleError("Имя пользователя введено некорректно");
+        }else{
             $checkName = true;
+
         }
     }
 

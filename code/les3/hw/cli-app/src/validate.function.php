@@ -9,3 +9,12 @@ function valiDate(string $inputData): bool
     }
 
 }
+
+function validateName( string $inputData) : bool
+{
+    if (preg_match("/^\d+$/", $inputData)) {
+        return true;
+    } else {
+        return false;
+    }
+}
