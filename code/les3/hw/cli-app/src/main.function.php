@@ -32,6 +32,7 @@ function parseComand(): string
             "add" => "addUser",
             "clear" => "clearUser",
             "del" => "del",
+            "userday" => "userDay",
             default => "help"
         };
     }
