@@ -95,4 +95,4 @@ class B extends A {
 
 Что он выведет теперь?
 
-[Solution](https://github.com/donabilardo/GB_PHP/tree/lesson3/code/les3/hw)
+[Solution](https://github.com/donabilardo/GB_PHP/tree/lesson3/code/les4/hw)
