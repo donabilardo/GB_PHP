@@ -2,14 +2,14 @@
 
 1) Собрать для себя окружение из Nginx + PHP-FPM и PHP CLI
 2) Выполните код в контейнере PHP CLI и объясните, что выведет данный код и почему:
-```
+```php
 <?php
-$a = 5;
-$b = '05';
-var_dump($a == $b);
-var_dump((int)'012345');
-var_dump((float)123.0 === (int)123.0);
-var_dump(0 == 'hello, world');
+  $a = 5;
+  $b = '05';
+  var_dump($a == $b);
+  var_dump((int)'012345');
+  var_dump((float)123.0 === (int)123.0);
+  var_dump(0 == 'hello, world');
 ?>
 ```
 3) В контейнере с PHP CLI поменяйте версию PHP с 8.2 на 7.4. Изменится ли вывод?
@@ -44,6 +44,9 @@ var_dump(0 == 'hello, world');
 [Solution](https://github.com/donabilardo/GB_PHP/tree/lesson3/code/les3/hw)
 
 ### Урок 4. ООП
+```dockerfile
+docker compose up
+```
 1) Придумайте класс, который описывает любую сущность из предметной области библиотеки: книга, шкаф, комната и т.п.
 2) Опишите свойства классов из п.1 (состояние).
 3) Опишите поведение классов из п.1 (методы).
