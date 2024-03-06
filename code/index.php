@@ -23,6 +23,7 @@
         <li><a href="les2/hw/index.php">Урок 2. Условия, Массивы, циклы, функции</a></li>
         <li><a href="les3/hw/index.php">Урок 3. Файлы, подключение кода, Composer</a></li>
         <li><a href="les4/hw/index.php">Урок 4. ООП</a></li>
+        <li><a href="les5/index.php">Урок 5. Разработка каркаса приложения</a></li>
     </ul>
 </div>
 
