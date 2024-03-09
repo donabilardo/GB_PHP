@@ -1,0 +1,20 @@
+{
+  "name": "root/code",
+  "autoload": {
+    "files": [
+      "src/main.function.php",
+      "src/template.function.php",
+      "src/file.function.php",
+      "src/validate.function.php",
+      "src/crud.user.function.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "donabilardo"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  }
+}

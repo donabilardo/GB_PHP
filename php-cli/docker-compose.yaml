@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  phpcli:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: phpcliimage
+    container_name: phpcli
+    volumes:
+      - /code/les3/hw/cli-app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
